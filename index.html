@@ -72,17 +72,17 @@
         }
         
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: rgba(10, 25, 47, 0.95);
-            position: fixed;
-            width: 100%;
-            z-index: 100;
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(0, 160, 225, 0.2);
-        }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(255, 107, 0, 0.95); /* Orange with slight transparency */
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(255, 107, 0, 0.8); /* matching orange border */
+}
         
         .logo {
             display: flex;
@@ -665,7 +665,27 @@ section.page {
   line-height: 1.7;
 }
 
+#home {
+  position: relative;
+  padding: 100px 60px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
 
+#home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://i.ibb.co/Z1cY8TJ4/simply-soft-gradation-technology-background-free-vector.jpg') center center / cover no-repeat;
+  filter: blur(12px) brightness(0.6);
+  opacity: 0.8;
+  z-index: -1;
+}
 /* About Section */
 #about {
   background: linear-gradient(-45deg, var(--light-orange), #ffffff, #ffd1a8, #ffffff);
@@ -870,12 +890,12 @@ section.page {
 
 /* Contact */
 #contact {
-  background-color: var(--accent-color);
-  color: white;
+  background-color: var(--light-orange); /* changed from var(--accent-color) */
+  color: var(--text-dark); /* change text color for better contrast on light background */
 }
 
 #contact .contact-form {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.8); /* increase opacity for better contrast on light bg */
   padding: 25px;
   border-radius: 6px;
   max-width: 700px;
@@ -904,6 +924,17 @@ section.page {
 
 #contact button:hover {
   background: #0042a0;
+}
+#contact,
+#contact h2,
+#contact h3,
+#contact h4,
+#contact p,
+#contact label,
+#contact input,
+#contact textarea,
+#contact .social-links a {
+  color: black;
 }
 
 /* Footer */
@@ -1219,9 +1250,11 @@ footer {
     
     <header>
        <div class="logo">
-    <img src="https://i.ibb.co/Xr1jJnQp/Whats-App-Image-2025-05-22-at-23-46-22-85e2e2ca.jpg" alt="AI & Security Association Logo" style="height: 50px; margin-right: 10px;">
-    <h1>AI & <span>Security</span> Association</h1>
+  <img src="https://i.ibb.co/KzqZTV0t/Whats-App-Image-2025-05-24-at-00-00-49-bc4fb288-removebg-preview.png" style="height: 100px; margin-right: 10px;">
+  
 </div>
+
+
 <button class="mobile-menu-btn" id="menuBtn">
     <i class="fas fa-bars"></i>
 </button>
@@ -1240,7 +1273,7 @@ footer {
     </header>
     
     <main>
-       <section class="page active" id="home">
+ <section class="page active" id="home">
     <!-- HERO SECTION -->
     <div class="hero">
        <h2 style="color: black;">ADVANCING AI IN SECURITY</h2>
@@ -1253,13 +1286,14 @@ footer {
 
         <div class="btn-group">
             <a href="#" class="btn nav-link" data-page="membership">Join Our Community</a>
-            <a href="#" class="btn btn-outline nav-link" data-page="about">Learn More</a>
+            <a href="#" class="btn btn-outline nav-link" data-page="about" style="color: white; border-color: white;">Learn More</a>
+
         </div>
     </div>
 
    <div class="intro-content" style="
     background: linear-gradient(rgba(20, 30, 40, 0.6), rgba(20, 30, 40, 0.6)),
-                url('https://i.ibb.co/rW9VQrx/images-14.jpg');
+                url('https://i.ibb.co/5X8BRf8T/Gemini-Generated-Image-hw2kcshw2kcshw2k.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1291,13 +1325,58 @@ footer {
         The AI and security Association is a global advocate for business users navigating the complex intersection of AI, cybersecurity, privacy, and governance. Through member collaboration, we deliver education, training, and policy advocacy that empowers organizations to leverage technology and reduce compliance risk.
     </p>
 </div>
+   
+   <!-- READY TO JOIN AISA -->
+<div class="join-aisa-section" style="
+    background: url('https://i.ibb.co/rGLMtHW7/images-4.jpg') no-repeat center center / cover;
+    padding: 100px 30px;
+    text-align: center;
+    position: relative;
+    margin: 60px auto;
+    border-radius: 16px;
+    max-width: 1000px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+">
+  <div style="
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px 20px;
+      border-radius: 16px;
+      color: #fff;
+      max-width: 90%;
+      margin: auto;
+  ">
+   <h2 style="font-size: 36px; margin-bottom: 20px; color: #ffffff;">Ready to Join AISA?</h2>
+
+    <p style="font-size: 20px; font-weight: 300; margin-bottom: 30px; color: #ffffff;">
+  Become part of a global movement empowering digital privacy, data ethics, and cybersecurity innovation.
+  Learn, lead, and make an impact with AISA!
+</p>
+
+    <a href="#join" class="btn" style="
+        background-color: #ffffff;
+        color: #000;
+        padding: 12px 24px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    " onmouseover="this.style.backgroundColor='#f1f1f1'" onmouseout="this.style.backgroundColor='#ffffff'">
+      Join Now
+    </a>
+  </div>
+</div>
+
 
 
 
     <!-- PODCAST HIGHLIGHT -->
   <div class="podcast-section" style="
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('https://i.ibb.co/4RWHWNmW/download-39.jpg');
+                url('https://i.ibb.co/7d2Jjbbk/download-7.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1318,7 +1397,7 @@ footer {
   ">
     <h2 style="color: #fff; font-size: 32px;">Our Podcast</h2>
     <p style="color: #eee; font-size: 18px; font-weight: 400;">
-      Explore our "ADCG on Privacy & Cybersecurity" podcast, where leaders discuss a wide range of issues in the privacy and cybersecurity arenas.
+      Explore our "AISA on Privacy & Cybersecurity" podcast, where leaders discuss a wide range of issues in the privacy and cybersecurity arenas.
     </p>
     <div class="btn-group" style="margin-top: 20px;">
       <a href="https://adcg-on-privacy-and-cybersecurity.simplecast.com/" class="btn" style="
@@ -1598,6 +1677,9 @@ document.addEventListener('DOMContentLoaded', function() {
   </section>
 </div>
 
+  </section>
+</div>
+
         
        <section class="page" id="about" style="padding: 60px 20px; background: #f9fafb; color: #222; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
     <h2 class="section-title" style="text-align: center; font-size: 36px; font-weight: 700; margin-bottom: 10px; color: #0d47a1;">
@@ -1653,9 +1735,9 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="board-members">
         <div class="member-card" style="text-align: center;">
             <img src="https://i.ibb.co/C3LQzLss/Screenshot-2025-05-17-205413.png" alt="Dr. Rahul Vadisetty" style="width: 100%; max-width: 250px; border-radius: 8px; margin-bottom: 15px;">
-            <h3>Dr. Rahul Vadisetty</h3>
+            <h3> Rahul Vadisetty</h3>
             <p class="position">Chair of the Advisory Board</p>
-            <p>Expert in AI-driven cybersecurity solutions with over 15 years of experience in the field. Former CTO of CyberDefense Inc.</p>
+            <p>Expertise in Artificial Intelligence , Cloud Security and Cybersecurity</p>
         </div>
     </div>
 </section>
