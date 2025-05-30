@@ -70,8 +70,7 @@
             75% { transform: translateY(50px) translateX(20px); }
             100% { transform: translateY(0) translateX(0); }
         }
-        
-        header {
+   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -150,7 +149,6 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-        
         .page {
             min-height: 100vh;
             padding: 120px 50px 80px;
@@ -1373,156 +1371,200 @@ footer {
     <main>
 <section class="page active" id="home">
     <!-- HERO SECTION -->
-    <div class="hero">
-     
+    <!-- HERO SECTION -->
+<div class="hero" style="
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 80px 30px;
+    border-radius: 16px;
+    max-width: 1200px;
+    margin: 40px auto;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+">
+    <h2 style="
+        color: #2d3748;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    ">
+        ADVANCING AI IN SECURITY
+    </h2>
 
-        <h1>Empowering Organizations in AI, Data Security, Privacy, and Regulatory Compliance</h1>
-        <p style="color: black;">
-  The Artificial Intelligence & Security Association (AISA) is a global advocate for business users navigating the evolving landscape of artificial intelligence, cybersecurity, privacy, and governance. Through member collaboration, AISA delivers impactful education, mentoring, training, and policy advocacy that empowers organizations to harness emerging technologies while minimizing compliance and security risks.
-</p>
+    <div style="
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 40px auto 0;
+        padding: 20px;
+        text-align: left;
+    ">
+        <!-- TEXT SIDE -->
+        <div style="flex: 1; min-width: 300px;">
+            <h1 style="
+                font-size: 32px;
+                font-weight: 700;
+                color: #2d3748;
+                margin-bottom: 20px;
+            ">
+                Empowering Organizations in AI, Data Security, Privacy, and Regulatory Compliance
+            </h1>
+            <p style="
+                font-size: 18px;
+                line-height: 1.6;
+                color: #4a5568;
+                margin-bottom: 30px;
+            ">
+                The AI and Security Association is a global advocate for business users navigating the complex intersection of AI, cybersecurity, privacy, and governance. Through member collaboration, we deliver education, training, and policy advocacy that empowers organizations to leverage technology and reduce compliance risk.
+            </p>
+
+            <div class="btn-group" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                <a href="#" class="btn nav-link" data-page="membership" style="
+                    background-color: #2d3748;
+                    color: white;
+                    padding: 14px 28px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#1a202c'" onmouseout="this.style.backgroundColor='#2d3748'">
+                    Join Our Community
+                </a>
+                <a href="#" class="btn btn-outline nav-link" data-page="about" style="
+                    border: 2px solid #2d3748;
+                    color: #2d3748;
+                    padding: 14px 28px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 16px;
+                    transition: all 0.3s ease;
+                " onmouseover="this.style.backgroundColor='#f0f4f8'" onmouseout="this.style.backgroundColor='transparent'">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <!-- IMAGE SIDE -->
+        <div style="flex: 1; text-align: center; min-width: 300px;">
+            <img src="https://i.ibb.co/ksvZXSy8/Screenshot-2025-05-30-210902.png" alt="AISA Mission" style="
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+            ">
+        </div>
+    </div>
+</div>
 
 
-        <div class="btn-group">
-            <a href="#" class="btn nav-link" data-page="membership">Join Our Community</a>
-            <a href="#" class="btn btn-outline nav-link" data-page="about" style="color: white; border-color: white;">Learn More</a>
+<!-- JOIN AISA SECTION -->
+<div class="join-aisa-section" style="
+    background: #f8fafc;
+    padding: 60px 30px;
+    margin: 60px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+">
+    <!-- IMAGE -->
+    <div style="flex: 1; text-align: center; min-width: 300px;">
+        <img src="https://i.ibb.co/7tnfq7XT/Screenshot-2025-05-30-210534.png" alt="Join AISA Image" style="
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        ">
+    </div>
 
+    <!-- CONTENT -->
+    <div style="flex: 1; padding: 20px; min-width: 300px;">
+        <h2 style="font-size: 36px; margin-bottom: 20px; color: #2d3748;">Ready to Join AISA?</h2>
+        <p style="font-size: 20px; font-weight: 300; margin-bottom: 30px; color: #4a5568;">
+            Become part of a global movement empowering digital privacy, data ethics, and cybersecurity innovation.
+            Learn, lead, and make an impact with AISA!
+        </p>
+        <a href="#join" class="btn" style="
+            background-color: #2d3748;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+        " onmouseover="this.style.backgroundColor='#1a202c'" onmouseout="this.style.backgroundColor='#2d3748'">
+            Join Now
+        </a>
+    </div>
+</div>
+
+
+<!-- PODCAST SECTION -->
+<div class="podcast-section" style="
+    background: #f8fafc;
+    padding: 60px 30px;
+    margin: 40px auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+">
+    <!-- CONTENT -->
+    <div style="flex: 1; padding: 20px; min-width: 300px;">
+        <h2 style="color: #2d3748; font-size: 32px; margin-bottom: 20px;">Our Podcast</h2>
+        <p style="color: #4a5568; font-size: 18px; font-weight: 400; margin-bottom: 30px;">
+            Explore our "AISA on Privacy & Cybersecurity" podcast, where leaders discuss a wide range of issues in the privacy and cybersecurity arenas.
+        </p>
+
+        <div class="btn-group" style="display: flex; gap: 15px; flex-wrap: wrap;">
+            <a href="#" class="btn" style="
+                background-color: #2d3748;
+                color: #fff;
+                padding: 10px 20px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#1a202c'" onmouseout="this.style.backgroundColor='#2d3748'">
+                Listen Now
+            </a>
+
+            <a href="#" class="btn btn-outline" style="
+                border: 2px solid #2d3748;
+                color: #2d3748;
+                padding: 10px 20px;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: bold;
+                transition: all 0.3s ease;
+            " onmouseover="this.style.backgroundColor='#f0f4f8'" onmouseout="this.style.backgroundColor='transparent'">
+                Browse All Episodes
+            </a>
         </div>
     </div>
 
-   <div class="intro-content" style="
-    background: linear-gradient(rgba(20, 30, 40, 0.6), rgba(20, 30, 40, 0.6)),
-                url('https://i.ibb.co/5X8BRf8T/Gemini-Generated-Image-hw2kcshw2kcshw2k.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 60px 30px;
-    border-radius: 16px;
-    color: #ffffff;
-    max-width: 1000px;
-    margin: 40px auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    text-align: center;
-">
-    <h2 style="
-        font-size: 28px; 
-        font-weight: 700; 
-        margin-bottom: 15px; 
-        color: #ffffff;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    ">
-        Empowering Business Users in AI, Cybersecurity, Privacy, and Governance
-    </h2>
-    <p style="
-        font-size: 18px; 
-        font-weight: 400; 
-        max-width: 90%; 
-        margin: 0 auto; 
-        color:#000000;
-        text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
-    ">
-        The AI and security Association is a global advocate for business users navigating the complex intersection of AI, cybersecurity, privacy, and governance. Through member collaboration, we deliver education, training, and policy advocacy that empowers organizations to leverage technology and reduce compliance risk.
-    </p>
-</div>
-   
-   <!-- READY TO JOIN AISA -->
-<div class="join-aisa-section" style="
-    background: url('https://i.ibb.co/rGLMtHW7/images-4.jpg') no-repeat center center / cover;
-    padding: 100px 30px;
-    text-align: center;
-    position: relative;
-    margin: 60px auto;
-    border-radius: 16px;
-    max-width: 1000px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-">
-  <div style="
-      backdrop-filter: blur(8px);
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 40px 20px;
-      border-radius: 16px;
-      color: #fff;
-      max-width: 90%;
-      margin: auto;
-  ">
-   <h2 style="font-size: 36px; margin-bottom: 20px; color: #ffffff;">Ready to Join AISA?</h2>
-
-    <p style="font-size: 20px; font-weight: 300; margin-bottom: 30px; color: #000000;">
-  Become part of a global movement empowering digital privacy, data ethics, and cybersecurity innovation.
-  Learn, lead, and make an impact with AISA!
-</p>
-
-    <a href="#join" class="btn" style="
-        background-color: #ffffff;
-        color: #000;
-        padding: 12px 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 16px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        transition: all 0.3s ease;
-    " onmouseover="this.style.backgroundColor='#f1f1f1'" onmouseout="this.style.backgroundColor='#ffffff'">
-      Join Now
-    </a>
-  </div>
-</div>
-
-
-
-
-    <!-- PODCAST HIGHLIGHT -->
-  <div class="podcast-section" style="
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('https://i.ibb.co/7d2Jjbbk/download-7.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 30px;
-    text-align: center;
-    border-radius: 16px;
-    margin: 40px auto;
-    max-width: 1000px;
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-">
-  <div style="
-      background-color: rgba(0, 0, 0, 0.3); 
-      padding: 20px; 
-      border-radius: 12px;
-      display: inline-block;
-      max-width: 90%;
-  ">
-    <h2 style="color: #fff; font-size: 32px;">Our Podcast</h2>
-    <p style="color: #000000; font-size: 18px; font-weight: 400;">
-      Explore our "AISA on Privacy & Cybersecurity" podcast, where leaders discuss a wide range of issues in the privacy and cybersecurity arenas.
-    </p>
-      <div class="btn-group" style="margin-top: 20px;">
-      <a href="" class="btn" style="
-       style="
-          background-color: #ffffff;
-          color: #000;
-          padding: 10px 20px;
-          margin: 5px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: bold;
-      " target="_blank">Listen Now</a>
-      <a href="" class="btn btn-outline" style="
-          border: 2px solid #ffffff;
-          color: #fff;
-          padding: 10px 20px;
-          margin: 5px;
-          border-radius: 6px;
-          text-decoration: none;
-          font-weight: bold;
-      " target="_blank">Browse All Episodes</a>
+    <!-- IMAGE -->
+    <div style="flex: 1; text-align: center; min-width: 300px;">
+        <img src="https://i.ibb.co/7J1BzJJG/Screenshot-2025-05-30-210124.png" alt="Podcast Image" style="
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        ">
     </div>
-  </div>
 </div>
-
       </section>
-
 
 
 <!-- Podcast Page Content (only shows when podcast nav is clicked) -->
