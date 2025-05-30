@@ -628,83 +628,130 @@ section.page {
 
 /* Hero Section */
 #home {
-  background: linear-gradient(-45deg, #e65100, #fb6d04, #e65100, #fb6d04);
-  background-size: 500% 500%;
-  animation: gradientShiftMixed 16s ease infinite;
-  color: #fff;  /* white text for contrast */
-  padding: 100px 60px;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+  background: linear-gradient(
+    90deg,
+    #fff 0%,
+    #ff9800 20%,
+    #fff 50%,
+    #2196f3 80%,
+    #fff 100%
+  );
+  background-size: 300% 100%;
+  animation: bgFlow 8s ease-in-out infinite alternate;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(33, 150, 243, 0.06);
+  padding-bottom: 40px;
 }
 
-@keyframes gradientShiftMixed {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes bgFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
 }
 
-#home .section-title {
-  font-size: 2.8rem;
+/* Headings */
+#home h2 {
+  font-size: 2rem;
+  color: #e65100;
+  margin-bottom: 20px;
   font-weight: 700;
-  color: #fff;
-  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #fff8e1, 0 1px 0 #ffe0b2;
 }
 
+/* Paragraphs */
 #home p {
-  max-width: 850px;
-  margin: 0 auto 40px;
-  font-size: 1.15rem;
-  color: #fff;
+  font-size: 1.1rem;
+  max-width: 900px;
+  margin: 0 auto 20px;
   line-height: 1.7;
+  color: #444;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 
-#home {
-  position: relative;
-  padding: 100px 60px;
-  text-align: center;
+/* Button Group */
+#home .btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+/* Buttons */
+#home .btn,
+#home .btn-outline {
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: .5px;
+  box-shadow: 0 2px 12px rgba(33, 150, 243, 0.09);
+  transition: 
+    background 0.3s cubic-bezier(.4,0,.2,1),
+    color 0.3s cubic-bezier(.4,0,.2,1),
+    transform 0.2s;
+}
+
+/* Primary Button */
+#home .btn {
+  background: linear-gradient(90deg, #2196f3 0%, #ff9800 100%);
   color: #fff;
-  overflow: hidden;
-  z-index: 1;
+  border: none;
+}
+#home .btn:hover {
+  background: linear-gradient(90deg, #ff9800 0%, #2196f3 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
 }
 
-#home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('https://i.ibb.co/BHG5Fwvc/images-3.jpg') center center / cover no-repeat;
-  filter: blur(12px) brightness(0.6);
-  opacity: 0.8;
-  z-index: -1;
+/* Outline Button */
+#home .btn-outline {
+  background: transparent;
+  color: #2196f3;
+  border: 2px solid #2196f3;
 }
-/* About Section */
-#about {
-  background: linear-gradient(-45deg, var(--light-orange), #ffffff, #ffd1a8, #ffffff);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
-  padding: 80px 60px;
-  color: #333;
+#home .btn-outline:hover {
+  background: #2196f3;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
+/* Affiliates Logos */
+#home .affiliates-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  margin-top: 36px;
+  padding: 18px 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+#home .affiliates-logos img {
+  max-height: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(33, 150, 243, 0.10));
+  transition: transform 0.2s;
+}
+#home .affiliates-logos img:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  #home {
+    padding: 20px 4vw 32px 4vw;
+    border-radius: 10px;
   }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  #home h2 { font-size: 1.25rem; }
+  #home .btn, #home .btn-outline { font-size: 0.98rem; padding: 10px 16px; }
+  #home .affiliates-logos { gap: 12px; }
 }
 
 #about .section-title {
@@ -976,10 +1023,29 @@ footer {
 }
 
 /* Headings */
+/* === Home Section Animated Background === */
+#home {
+  /* Animated white-orange-white gradient background */
+  background: linear-gradient(90deg, #fff 0%, #ffe0b2 30%, #ff9800 50%, #ffe0b2 70%, #fff 100%);
+  background-size: 300% 100%;
+  animation: bgFlow 8s ease-in-out infinite alternate;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(255, 152, 0, 0.08);
+  padding-bottom: 40px;
+}
+@keyframes bgFlow {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 100% 0%; }
+}
+
+/* Headings */
 #home h2 {
   font-size: 2rem;
-  color: #e65100;
+  color: #ff9800;
   margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px #fff8e1, 0 1px 0 #ffe0b2;
 }
 
 /* Paragraphs */
@@ -988,7 +1054,11 @@ footer {
   max-width: 900px;
   margin: 0 auto 20px;
   line-height: 1.7;
-  color: #444;
+  color: #333;
+  background: rgba(255,255,255,0.70);
+  border-radius: 8px;
+  padding: 10px 18px;
+  box-shadow: 0 1px 8px rgba(255, 152, 0, 0.04);
 }
 
 /* Button Group */
@@ -996,41 +1066,48 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 14px;
   margin-top: 20px;
 }
 
 /* Buttons */
 #home .btn,
 #home .btn-outline {
-  padding: 10px 20px;
-  font-size: 1rem;
-  border-radius: 6px;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  letter-spacing: .5px;
+  box-shadow: 0 2px 12px rgba(255, 152, 0, 0.09);
+  transition: 
+    background 0.3s cubic-bezier(.4,0,.2,1),
+    color 0.3s cubic-bezier(.4,0,.2,1),
+    transform 0.2s;
 }
 
 /* Primary Button */
 #home .btn {
-  background-color: #039be5; /* Blue button */
+  background: linear-gradient(90deg, #ff9800 0%, #ffa726 100%);
   color: #fff;
   border: none;
 }
-
 #home .btn:hover {
-  background-color: #0288d1;
+  background: linear-gradient(90deg, #ffa726 0%, #ff9800 100%);
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
 }
 
 /* Outline Button */
 #home .btn-outline {
-  background-color: transparent;
-  color: #e65100;
-  border: 2px solid #e65100;
+  background: transparent;
+  color: #ff9800;
+  border: 2px solid #ff9800;
 }
-
 #home .btn-outline:hover {
-  background-color: #e65100;
+  background: #ff9800;
   color: #fff;
+  transform: translateY(-2px) scale(1.04);
 }
 
 /* Affiliates Logos */
@@ -1039,14 +1116,34 @@ footer {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  margin-top: 30px;
+  gap: 28px;
+  margin-top: 36px;
+  padding: 18px 0;
+  background: rgba(255, 236, 179, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 1px 8px rgba(255, 152, 0, 0.06);
 }
-
 #home .affiliates-logos img {
   max-height: 60px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(255, 152, 0, 0.10));
+  transition: transform 0.2s;
 }
+#home .affiliates-logos img:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  #home {
+    padding: 20px 4vw 32px 4vw;
+    border-radius: 10px;
+  }
+  #home h2 { font-size: 1.25rem; }
+  #home .btn, #home .btn-outline { font-size: 0.98rem; padding: 10px 16px; }
+  #home .affiliates-logos { gap: 12px; }
+}
+
 
 
 
@@ -1274,13 +1371,13 @@ footer {
     </header>
     
     <main>
- <section class="page active" id="home">
+<section class="page active" id="home">
     <!-- HERO SECTION -->
     <div class="hero">
        <h2 style="color: black;">ADVANCING AI IN SECURITY</h2>
 
         <h1>Empowering Organizations in AI, Data Security, Privacy, and Regulatory Compliance</h1>
-        <p style="color: white;">
+        <p style="color: black;">
   The Artificial Intelligence & Security Association (AISA) is a global advocate for business users navigating the evolving landscape of artificial intelligence, cybersecurity, privacy, and governance. Through member collaboration, AISA delivers impactful education, mentoring, training, and policy advocacy that empowers organizations to harness emerging technologies while minimizing compliance and security risks.
 </p>
 
@@ -1320,7 +1417,7 @@ footer {
         font-weight: 400; 
         max-width: 90%; 
         margin: 0 auto; 
-        color: #ffffff;
+        color:#000000;
         text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
     ">
         The AI and security Association is a global advocate for business users navigating the complex intersection of AI, cybersecurity, privacy, and governance. Through member collaboration, we deliver education, training, and policy advocacy that empowers organizations to leverage technology and reduce compliance risk.
@@ -1350,7 +1447,7 @@ footer {
   ">
    <h2 style="font-size: 36px; margin-bottom: 20px; color: #ffffff;">Ready to Join AISA?</h2>
 
-    <p style="font-size: 20px; font-weight: 300; margin-bottom: 30px; color: #ffffff;">
+    <p style="font-size: 20px; font-weight: 300; margin-bottom: 30px; color: #000000;">
   Become part of a global movement empowering digital privacy, data ethics, and cybersecurity innovation.
   Learn, lead, and make an impact with AISA!
 </p>
@@ -1397,11 +1494,12 @@ footer {
       max-width: 90%;
   ">
     <h2 style="color: #fff; font-size: 32px;">Our Podcast</h2>
-    <p style="color: #eee; font-size: 18px; font-weight: 400;">
+    <p style="color: #000000; font-size: 18px; font-weight: 400;">
       Explore our "AISA on Privacy & Cybersecurity" podcast, where leaders discuss a wide range of issues in the privacy and cybersecurity arenas.
     </p>
-    <div class="btn-group" style="margin-top: 20px;">
-      <a href="https://adcg-on-privacy-and-cybersecurity.simplecast.com/" class="btn" style="
+      <div class="btn-group" style="margin-top: 20px;">
+      <a href="" class="btn" style="
+       style="
           background-color: #ffffff;
           color: #000;
           padding: 10px 20px;
@@ -1410,7 +1508,7 @@ footer {
           text-decoration: none;
           font-weight: bold;
       " target="_blank">Listen Now</a>
-      <a href="https://adcg-on-privacy-and-cybersecurity.simplecast.com/" class="btn btn-outline" style="
+      <a href="" class="btn btn-outline" style="
           border: 2px solid #ffffff;
           color: #fff;
           padding: 10px 20px;
@@ -1424,7 +1522,7 @@ footer {
 </div>
 
       </section>
-      
+
 
 
 <!-- Podcast Page Content (only shows when podcast nav is clicked) -->
