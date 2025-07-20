@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Association - Membership Application</title>
+    <style>
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .form-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 2rem;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+        }
+        
+        .form-header p {
+            margin: 0.5rem 0 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .form-body {
+            background: white;
+            padding: 2rem;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .form-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-option input {
+            margin-right: 0.5rem;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            margin-top: 0.5rem;
+        }
+        
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+        }
+        
+        .checkbox-option input {
+            margin-right: 0.5rem;
+        }
+        
+        .address-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .btn-submit {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            width: 100%;
+            margin-top: 2rem;
+        }
+        
+        .btn-submit:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+        
+        .benefits-list {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        
+        .benefits-list h3 {
+            margin-top: 0;
+            color: var(--secondary);
+        }
+        
+        .benefits-list ul {
+            padding-left: 1.5rem;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .address-group {
+                grid-template-columns: 1fr;
+            }
+            
+            .radio-group {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h1>Join Our Association</h1>
+            <p>Become a valued member today and unlock exclusive benefits</p>
+        </div>
+        
+        <div class="form-body">
+            <form id="membershipForm">
+                <div class="form-section">
+                    <h2 class="section-title">Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="male" name="gender" value="male">
+                                <label for="male">Male</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="female" name="gender" value="female">
+                                <label for="female">Female</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="other" name="gender" value="other">
+                                <label for="other">Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="123 Main Street">
+                    </div>
+                    
+                    <div class="form-group address-group">
+                        <div>
+                            <label for="city">City</label>
+                            <input type="text" id="city" name="city">
+                        </div>
+                        <div>
+                            <label for="state">State</label>
+                            <input type="text" id="state" name="state">
+                        </div>
+                        <div>
+                            <label for="zip">ZIP Code</label>
+                            <input type="text" id="zip" name="zip">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2 class="section-title">Professional Details</h2>
+                    
+                    <div class="form-group">
+                        <label for="occupation">Occupation/Title</label>
+                        <input type="text" id="occupation" name="occupation" placeholder="e.g. Marketing Manager">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Organization/Company</label>
+                        <input type="text" id="company" name="company">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="industry">Industry/Field</label>
+                        <input type="text" id="industry" name="industry" placeholder="e.g. Information Technology">
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2 class="section-title">Membership Type</h2>
+                    
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="radio" id="regular" name="membershipType" value="regular" checked>
+                            <label for="regular">Regular Member ($50/year)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" id="student" name="membershipType" value="student">
+                            <label for="student">Student Member ($25/year - ID Required)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" id="life" name="membershipType" value="life">
+                            <label for="life">Life Member ($500 one-time payment)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" id="corporate" name="membershipType" value="corporate">
+                            <label for="corporate">Corporate Member ($200/year)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="radio" id="otherType" name="membershipType" value="other">
+                            <label for="otherType">Other (please specify)</label>
+                            <input type="text" id="otherTypeSpecify" name="otherTypeSpecify" style="margin-top: 0.5rem; display: none;">
+                        </div>
+                    </div>
+                    
+                    <div class="benefits-list">
+                        <h3>Membership Benefits</h3>
+                        <ul>
+                            <li>Access to exclusive events and networking opportunities</li>
+                            <li>Professional development resources</li>
+                            <li>Discounts on conferences and workshops</li>
+                            <li>Monthly newsletter with industry insights</li>
+                            <li>Member-only online community</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h2 class="section-title">Declaration</h2>
+                    <div class="form-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="declaration" name="declaration" required>
+                            <label for="declaration">I hereby apply for membership in Fellow. I agree to abide by the rules and regulations of the association.</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('otherType').addEventListener('change', function() {
+            const otherSpecify = document.getElementById('otherTypeSpecify');
+            otherSpecify.style.display = this.checked ? 'block' : 'none';
+            if (this.checked) otherSpecify.focus();
+        });
+        
+        document.getElementById('membershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your application! We will review your information and contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
